@@ -1,6 +1,7 @@
-def main():
-    print("Hello from vectra!")
+from vectra.cli.main import app
 
+def main():
+    app()
 
 if __name__ == "__main__":
     main()

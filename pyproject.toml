@@ -6,6 +6,24 @@ readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
     "fastapi>=0.135.1",
+    "llama-cpp-python>=0.3.16",
+    "requests>=2.32.5",
+    "rich>=14.3.3",
     "typer>=0.24.1",
     "uvicorn>=0.42.0",
 ]
+
+[project.scripts]
+vectra = "vectra.main:main"
+
+[tool.uv]
+package = true
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"vectra" = "."}
+packages = ["vectra", "vectra.cli", "vectra.cli.commands", "vectra.core", "vectra.server"]
+
